@@ -14,11 +14,11 @@ else
 
 /* Альтернативное решение */
 Console.Write("Введите пятизначное число:");
-int num2 = Convert.ToInt32(Console.ReadLine());
+int nummber = Convert.ToInt32(Console.ReadLine());
 
-if(num2 >= 10000 && num2 <= 99999)
+if(nummber >= 10000 && nummber <= 99999)
 {
-    if((num2 / 10000 == num2 % 10) && (num2 % 10000 / 1000 == num2 % 100 / 10))
+    if((nummber / 10000 == nummber % 10) && (nummber % 10000 / 1000 == nummber % 100 / 10))
     {
         Console.WriteLine("Является палиндроммом");
     }
