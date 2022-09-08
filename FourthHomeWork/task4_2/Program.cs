@@ -18,9 +18,7 @@ int SumOfNum(int a)
     }
     else
     {
-        int b = 1;
-        b = a * 2;
-        a = a - b;
+        a *= -1;
         while (a > 0)
         {
             sum = sum + a % 10;
