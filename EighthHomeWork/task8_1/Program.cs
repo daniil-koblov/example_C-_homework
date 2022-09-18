@@ -11,7 +11,7 @@
 Console.Clear();
 
 int m = new Random().Next(3, 4);
-int n = new Random().Next(3, 5);
+int n = new Random().Next(4, 5);
 int[,] num = new int[m, n];
 for (int i = 0; i < num.GetLength(0); i++)
 {
