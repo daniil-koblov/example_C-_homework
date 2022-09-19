@@ -10,40 +10,55 @@
 // 8 4 4 2
 Console.Clear();
 
-int m = new Random().Next(3, 4);
-int n = new Random().Next(4, 5);
-int[,] num = new int[m, n];
-for (int i = 0; i < num.GetLength(0); i++)
+int[,] FillUnordered(int m, int n)
 {
-    for (int j = 0; j < num.GetLength(1); j++)
+    int[,] matr = new int[m, n];
+    for (int i = 0; i < matr.GetLength(0); i++)
     {
-        num[i, j] = new Random().Next(1, 10);
-        Console.Write($"{num[i, j]} ");
+        for (int j = 0; j < matr.GetLength(1); j++)
+        {
+            matr[i, j] = new Random().Next(1, 10);
+        }
     }
-    Console.WriteLine();
+    return matr;
 }
 
-Console.WriteLine();
+int[,] Ordering(int[,] num, int v)
+{
+    for (int i = 0; i < num.GetLength(0); i++)
+    {
+        int[] array = new int[v];
+        for (int j = 0; j < num.GetLength(1); j++)
+        {
+            array[j] = num[i, j];
+        }
+        Array.Sort(array);
+        Array.Reverse(array);
+        for (int j = 0; j < num.GetLength(1); j++)
+        {
+            num[i, j] = array[j];
+        }
+    }
+    return num;
+}
 
-for (int i = 0; i < num.GetLength(0); i++)
+void PrintArray(int[,] num)
 {
-    int[] array = new int[n];
-    for (int j = 0; j < num.GetLength(1); j++)
+    for (int i = 0; i < num.GetLength(0); i++)
     {
-        array[j] = num[i,j];
-    }
-    Array.Sort(array);
-    Array.Reverse(array);
-    for (int j = 0; j < num.GetLength(1); j++)
-    {
-        num[i,j] = array[j];
+        for (int j = 0; j < num.GetLength(1); j++)
+        {
+            Console.Write($"{num[i, j]} ");
+        }
+        Console.WriteLine();
     }
 }
-for (int i = 0; i < num.GetLength(0); i++)
-{
-    for (int j = 0; j < num.GetLength(1); j++)
-    {
-        Console.Write($"{num[i, j]} ");
-    }
-    Console.WriteLine();
-}
+
+int a = new Random().Next(3, 4);
+int b = new Random().Next(4, 5);
+Console.WriteLine($"Неупорядоченный массив.");
+int[,] num1 = FillUnordered(a, b);
+PrintArray(num1);
+Console.WriteLine($"Упорядоченный массив.");
+Ordering(num1, b);
+PrintArray(num1);
