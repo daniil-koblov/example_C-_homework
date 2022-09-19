@@ -37,7 +37,8 @@ int[,,] FillArray(int m, int n, int k)
     {
         Console.Write($"{arr2[i]} ");
     }
-    
+    Console.WriteLine();
+
     Console.WriteLine($"Записываем эти уникальные числа в трехмерный массив.");
     int h = 0;
     for (int i = 0; i < arr.GetLength(0); i++)
