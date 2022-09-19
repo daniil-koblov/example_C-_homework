@@ -75,6 +75,5 @@ int a = 2;
 int b = 2;
 int c = 2;
 
-Console.WriteLine($"Первый массив.");
 int[,,] matrix1 = FillArray(a, b, c);
 PrintArray(matrix1);
