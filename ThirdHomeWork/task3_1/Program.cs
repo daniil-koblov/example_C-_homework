@@ -2,7 +2,9 @@
 и проверяет, является ли оно палиндромом. */
 Console.Clear();
 Console.Write("Введите пятизначное число:");
-string num = Console.ReadLine();
+int inputNum = Convert.ToInt32(Console.ReadLine());
+string num = Convert.ToString(inputNum);
+
 if ((num[0] == num[4]) && (num[1] == num[3]))
 {
     Console.WriteLine("Является палиндроммом");
